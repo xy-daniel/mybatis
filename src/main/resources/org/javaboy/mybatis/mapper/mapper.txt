@@ -1,0 +1,17 @@
+默认情况下如果把mapper.xml放到resources下面必须与mapper.java同级目录
+
+解决方法
+1.放在java目录的方法
+    <resources>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </resource>
+        <resource>
+            <directory>src/main/resources</directory>
+        </resource>
+    </resources>
+2.配置resources下面的配置放置在自定义目录
+mybatis.mapper-locations=classpath:/mapper/*.xml
